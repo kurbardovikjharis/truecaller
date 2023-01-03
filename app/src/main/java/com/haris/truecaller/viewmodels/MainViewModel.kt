@@ -2,8 +2,8 @@ package com.haris.truecaller.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.haris.truecaller.data.RequestType
 import com.haris.truecaller.repositories.MainRepository
-import com.haris.truecaller.repositories.RequestType
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch

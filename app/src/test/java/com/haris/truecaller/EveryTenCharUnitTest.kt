@@ -1,6 +1,6 @@
 package com.haris.truecaller
 
-import com.haris.truecaller.repositories.toEveryTenChar
+import com.haris.truecaller.utils.toEveryTenChar
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

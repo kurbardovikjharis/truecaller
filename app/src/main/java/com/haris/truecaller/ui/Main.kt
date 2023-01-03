@@ -1,4 +1,4 @@
-package com.haris.truecaller
+package com.haris.truecaller.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box

@@ -4,8 +4,8 @@ object TestData {
 
     const val emptyString = ""
     const val less10String = "1"
-    const val more10String = "123456789X1"
-    const val more20String = "123456789X123456789X1"
+    const val more10String = "123456789X1" // x is 10th char
+    const val more20String = "123456789X123456789X1" // x is 10th and 20th char
 
     val empty = emptyList<String>()
     val less10 = listOf("1")

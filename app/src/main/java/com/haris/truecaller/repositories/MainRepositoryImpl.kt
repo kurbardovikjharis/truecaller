@@ -1,5 +1,9 @@
 package com.haris.truecaller.repositories
 
+import com.haris.truecaller.data.RequestType
+import com.haris.truecaller.utils.toEveryTenChar
+import com.haris.truecaller.utils.toTenChar
+import com.haris.truecaller.utils.wordCounter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.jsoup.Jsoup
@@ -46,31 +50,4 @@ class MainRepositoryImpl @Inject constructor() : MainRepository {
 
             words.wordCounter().toString()
         }
-}
-
-fun String.toTenChar(): String = if (length >= 10) this[9].toString() else ""
-
-fun String.toEveryTenChar(): List<Char> {
-    val list = mutableListOf<Char>()
-    for (i in 9..length step 10) {
-        if (i >= length) break
-        list.add(this[i])
-    }
-
-    return list
-}
-
-fun List<String>.wordCounter(): Int {
-    val set = hashSetOf<String>()
-    forEach {
-        set.add(it)
-    }
-
-    return set.size
-}
-
-enum class RequestType {
-    TenChar,
-    EveryTenChar,
-    WordCounter
 }

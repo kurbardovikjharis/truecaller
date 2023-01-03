@@ -1,6 +1,6 @@
 package com.haris.truecaller
 
-import com.haris.truecaller.repositories.wordCounter
+import com.haris.truecaller.utils.wordCounter
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

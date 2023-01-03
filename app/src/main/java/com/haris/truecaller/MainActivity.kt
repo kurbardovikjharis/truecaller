@@ -8,6 +8,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.haris.truecaller.ui.Main
 import com.haris.truecaller.ui.theme.TrueCallerTheme
 import dagger.hilt.android.AndroidEntryPoint
 
