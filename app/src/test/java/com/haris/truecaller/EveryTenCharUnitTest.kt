@@ -7,21 +7,30 @@ import org.junit.Test
 class EveryTenCharUnitTest {
     @Test
     fun empty_isCorrect() {
-        assertEquals(emptyList<String>().toString(), TestData.empty.toEveryTenChar().toString())
+        assertEquals(
+            emptyList<String>().toString(),
+            TestData.emptyString.toEveryTenChar().toString()
+        )
     }
 
     @Test
     fun less10_isCorrect() {
-        assertEquals(emptyList<String>().toString(), TestData.less10.toEveryTenChar().toString())
+        assertEquals(
+            emptyList<String>().toString(),
+            TestData.less10String.toEveryTenChar().toString()
+        )
     }
 
     @Test
     fun more10_isCorrect() {
-        assertEquals(listOf("10").toString(), TestData.more10.toEveryTenChar().toString())
+        assertEquals(listOf("X").toString(), TestData.more10String.toEveryTenChar().toString())
     }
 
     @Test
     fun more20_isCorrect() {
-        assertEquals(listOf("10", "20").toString(), TestData.more20.toEveryTenChar().toString())
+        assertEquals(
+            listOf("X", "X").toString(),
+            TestData.more20String.toEveryTenChar().toString()
+        )
     }
 }

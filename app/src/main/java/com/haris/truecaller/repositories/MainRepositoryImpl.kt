@@ -24,9 +24,8 @@ class MainRepositoryImpl @Inject constructor() : MainRepository {
             val doc: Document = Jsoup.connect(url).get()
 
             val body = doc.body().text()
-            val words = body.split("[,.!?\\s]+".toRegex())
 
-            words[9]
+            body.toTenChar()
         }
 
     private suspend fun everyTenChar(): String =
@@ -34,9 +33,8 @@ class MainRepositoryImpl @Inject constructor() : MainRepository {
             val doc: Document = Jsoup.connect(url).get()
 
             val body = doc.body().text()
-            val words = body.split("[,.!?\\s]+".toRegex())
 
-            words.toEveryTenChar().toString()
+            body.toEveryTenChar().toString()
         }
 
     private suspend fun wordCounter(): String =
@@ -50,12 +48,13 @@ class MainRepositoryImpl @Inject constructor() : MainRepository {
         }
 }
 
-fun List<String>.toEveryTenChar(): List<String> {
-    val list = mutableListOf<String>()
-    forEachIndexed { index, item ->
-        if ((index + 1) % 10 == 0) {
-            list.add(item)
-        }
+fun String.toTenChar(): String = if (length >= 10) this[9].toString() else ""
+
+fun String.toEveryTenChar(): List<Char> {
+    val list = mutableListOf<Char>()
+    for (i in 9..length step 10) {
+        if (i >= length) break
+        list.add(this[i])
     }
 
     return list
