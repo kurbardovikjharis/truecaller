@@ -5,5 +5,4 @@
 <p>if there is an error, we display "error" instead of the value.</p>
 <p>unit tests written to verify the solution.</p>
 
-<p>another project I've been working on recently:</p>
-<link>https://github.com/kurbardovikjharis/agenturen
+<p>another project I've been working on recently: <link>https://github.com/kurbardovikjharis/agenturen</p>
