@@ -32,6 +32,6 @@ class WordCounterUnitTest {
 
     @Test
     fun caseSensitive_isCorrect() {
-        assertEquals(6, TestData.caseSensitive.wordCounter())
+        assertEquals(3, TestData.caseSensitive.wordCounter())
     }
 }

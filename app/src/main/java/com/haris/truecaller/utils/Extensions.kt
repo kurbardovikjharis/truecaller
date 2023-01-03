@@ -15,7 +15,7 @@ fun String.toEveryTenChar(): List<Char> {
 fun List<String>.wordCounter(): Int {
     val set = hashSetOf<String>()
     forEach {
-        set.add(it)
+        set.add(it.lowercase())
     }
 
     return set.size
