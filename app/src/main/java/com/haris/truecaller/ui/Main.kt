@@ -29,7 +29,9 @@ fun Main(viewModel: MainViewModel) {
                 }
             }
 
-            item { Text(text = "${state.first}\n\n${state.second}\n\n${state.third}") }
+            if (state.first.isNotEmpty() && state.second.isNotEmpty() && state.third.isNotEmpty()) {
+                item { Text(text = "1st request: ${state.first}\n\n2nd request: ${state.second}\n\n3rd request: ${state.third}") }
+            }
         }
 
         if (state.isLoading) {

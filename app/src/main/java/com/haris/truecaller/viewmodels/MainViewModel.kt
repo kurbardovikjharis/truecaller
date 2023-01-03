@@ -37,15 +37,15 @@ class MainViewModel @Inject constructor(
     fun fetch() {
         isLoading.value = true
         viewModelScope.launch {
-            first.value = mainRepository.fetch(RequestType.TenChar)
+            first.value = mainRepository.fetch(RequestType.TenChar) ?: "error"
             isLoading.value = false // not loading once one request is done
         }
         viewModelScope.launch {
-            second.value = mainRepository.fetch(RequestType.EveryTenChar)
+            second.value = mainRepository.fetch(RequestType.EveryTenChar) ?: "error"
             isLoading.value = false // not loading once one request is done
         }
         viewModelScope.launch {
-            third.value = mainRepository.fetch(RequestType.WordCounter)
+            third.value = mainRepository.fetch(RequestType.WordCounter) ?: "error"
             isLoading.value = false // not loading once one request is done
         }
     }

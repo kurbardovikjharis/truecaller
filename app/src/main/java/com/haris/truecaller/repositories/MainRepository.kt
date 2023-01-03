@@ -4,5 +4,5 @@ import com.haris.truecaller.data.RequestType
 
 interface MainRepository {
 
-    suspend fun fetch(type: RequestType): String
+    suspend fun fetch(type: RequestType): String?
 }

@@ -15,7 +15,7 @@ class MainRepositoryImpl @Inject constructor() : MainRepository {
     private val url =
         "https://www.truecaller.com/blog/life-at-truecaller/life-as-an-android-engineer"
 
-    override suspend fun fetch(type: RequestType): String {
+    override suspend fun fetch(type: RequestType): String? {
         return when (type) {
             RequestType.TenChar -> tenChar()
             RequestType.EveryTenChar -> everyTenChar()
@@ -23,31 +23,46 @@ class MainRepositoryImpl @Inject constructor() : MainRepository {
         }
     }
 
-    private suspend fun tenChar(): String =
+    private suspend fun tenChar(): String? =
         withContext(Dispatchers.IO) {
-            val doc: Document = Jsoup.connect(url).get()
+            try {
+                val doc: Document = Jsoup.connect(url).get()
 
-            val body = doc.body().text()
+                val body = doc.body().text()
 
-            body.toTenChar()
+                body.toTenChar()
+            } catch (e: Exception) {
+                e.printStackTrace()
+                null
+            }
         }
 
-    private suspend fun everyTenChar(): String =
+    private suspend fun everyTenChar(): String? =
         withContext(Dispatchers.IO) {
-            val doc: Document = Jsoup.connect(url).get()
+            try {
+                val doc: Document = Jsoup.connect(url).get()
 
-            val body = doc.body().text()
+                val body = doc.body().text()
 
-            body.toEveryTenChar().toString()
+                body.toEveryTenChar().toString()
+            } catch (e: Exception) {
+                e.printStackTrace()
+                null
+            }
         }
 
-    private suspend fun wordCounter(): String =
+    private suspend fun wordCounter(): String? =
         withContext(Dispatchers.IO) {
-            val doc: Document = Jsoup.connect(url).get()
+            try {
+                val doc: Document = Jsoup.connect(url).get()
 
-            val body = doc.body().text()
-            val words = body.split("[,.!?\\s]+".toRegex())
+                val body = doc.body().text()
+                val words = body.split("[,.!?\\s]+".toRegex())
 
-            words.wordCounter().toString()
+                words.wordCounter().toString()
+            } catch (e: Exception) {
+                e.printStackTrace()
+                null
+            }
         }
 }
