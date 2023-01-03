@@ -22,6 +22,11 @@ class EveryTenCharUnitTest {
     }
 
     @Test
+    fun exactly10_isCorrect() {
+        assertEquals(listOf("X").toString(), TestData.exactly10String.toEveryTenChar().toString())
+    }
+
+    @Test
     fun more10_isCorrect() {
         assertEquals(listOf("X").toString(), TestData.more10String.toEveryTenChar().toString())
     }

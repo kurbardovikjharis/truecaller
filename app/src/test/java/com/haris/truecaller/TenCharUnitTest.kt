@@ -16,6 +16,11 @@ class TenCharUnitTest {
     }
 
     @Test
+    fun exactly10_isCorrect() {
+        assertEquals("X", TestData.exactly10String.toTenChar())
+    }
+
+    @Test
     fun more10_isCorrect() {
         assertEquals("X", TestData.more10String.toTenChar())
     }
